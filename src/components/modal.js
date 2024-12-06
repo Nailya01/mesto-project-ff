@@ -1,7 +1,7 @@
 function openModal(popup) {
     popup.classList.add('popup_is-opened');
-    popup.classList.add('popup_is-animated'); // плавно
-    popup.addEventListener('mousedown', closeModalOverlay); //за пределами окна
+    popup.classList.add('popup_is-animated');
+    popup.addEventListener('mousedown', closeModalOverlay);
     document.addEventListener('keydown', escClose);
 };
   
