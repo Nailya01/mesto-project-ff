@@ -1,7 +1,5 @@
 function openModal(popup) {
     popup.classList.add('popup_is-opened');
-    popup.classList.add('popup_is-animated');
-    popup.addEventListener('mousedown', closeModalOverlay);
     document.addEventListener('keydown', escClose);
 };
   
@@ -15,11 +13,5 @@ function escClose (evt) {
     closeModal(document.querySelector('.popup_is-opened'))
     }
 };
-
-const closeModalOverlay = (evt) => {
-    if (evt.target.classList.contains('popup_is-opened')) {
-    closeModal(evt.target);
-    }
- };
 
 export {openModal, closeModal};

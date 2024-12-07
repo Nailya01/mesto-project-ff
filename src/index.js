@@ -18,10 +18,8 @@ const popupEdit = document.querySelector('.popup_type_edit');
 const profileTitle = document.querySelector('.profile__title');
 function handleFormProfileSubmit(evt) {
     evt.preventDefault();
-    const newName = nameInput.value;
-    const newJob = jobInput.value;
-    profileTitle.textContent = newName;
-    profileDescription.textContent = newJob;
+    profileTitle.textContent = nameInput.value;
+    profileDescription.textContent = jobInput.value;
     closeModal(popupEdit);
 };
 
@@ -47,13 +45,16 @@ function openImage(link, name) {
     openModal(popupTypeImage)
 };
 
-const popupCloseButtons = document.querySelectorAll('.popup__close');
-popupCloseButtons.forEach((button) => {
-    const popup = button.closest('.popup');
-    button.addEventListener('click', () => {
+ const popupCloseButtons = document.querySelectorAll('.popup__close');
+ popupCloseButtons.forEach((button) => { 
+    const popup = button.closest('.popup'); 
+    button.addEventListener('click', () => closeModal(popup)); 
+    popup.addEventListener('mousedown', (event) => {
+      if (event.target === event.currentTarget) {
         closeModal(popup);
-    });
- }); 
+      }  });
+    popup.classList.add('popup_is-animated');
+  }); 
 
 const formElementAddCard = document.querySelector('form[name="new-place"]');
 const inputCardName = formElementAddCard.querySelector('.popup__input_type_card-name');
