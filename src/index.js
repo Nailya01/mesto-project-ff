@@ -120,7 +120,6 @@ function handleCardSubmit(evt) {
       console.log(err);
     })
     .finally(() => {
-      formElementAddCard.reset();
       renderLoading(false, btnSubmitAddNewCard, originalText);
     });
 };
